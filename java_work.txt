@@ -1,0 +1,49 @@
+may-20
+
+Class work :
+employee program
+short-cut of Getter setter 
+upload the code on GitHub
+to string
+oops concepts
+
+Home work:
+1. jdk latest version 
+
+--> 
+
+
+
+2. Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. First method named as 'setDim' takes length and 
+breadth of rectangle as parameters and the second method named as 'getArea' returns the area of the rectangle.
+
+--> 
+
+//Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. First method named as 'setDim' takes length and breadth of rectangle as parameters and the second method named as 'getArea' returns the area of the rectangle.in java
+
+import java.io.*;
+
+class Area
+{
+    private double length;
+    private double breadth;
+
+    public void setDim(double length,double breadth)
+    {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    private double getArea()
+    {
+        return length*breadth;
+    }
+
+    public static void main(String arg[])
+    {
+        Area rectangle = new Area();
+        rectangle.setDim(5.5, 4.0);
+        double area = rectangle.getArea();
+        System.out.println("area of rectangle = " + area);
+    }
+}
