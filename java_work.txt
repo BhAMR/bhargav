@@ -10,7 +10,7 @@ oops concepts
 Home work:
 1. jdk latest version 
 
---> 
+--> JDK 22.
 
 
 
