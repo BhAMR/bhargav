@@ -1,0 +1,121 @@
+1.What is the latest version of JDK?
+
+--> JDK 22.0
+
+2.Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. First method named as 'setDim' takes length and breadth of rectangle as parameters and the second method named as 'getArea' returns the area of the rectangle.
+
+--> 
+
+import java.io.*;
+
+class Area
+{
+    private double length;
+    private double breadth;
+
+    public void setDim(double length,double breadth)
+    {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    private double getArea()
+    {
+        return length*breadth;
+    }
+
+    public static void main(String arg[])
+    {
+        Area rectangle = new Area();
+        rectangle.setDim(5.5, 4.0);
+        double area = rectangle.getArea();
+        System.out.println("area of rectangle = " + area);
+    }
+}
+
+
+3.Try to add default constructor in the program
+
+--> 
+
+import java.util.Scanner;
+
+class student
+{
+    int roll;
+    String name,email;
+
+    student() // default constructor
+    {
+        System.out.println("<--- this is default constructor --->");
+        roll = 42;
+        name = "jayraj";
+        email = "em3@gmail.com";
+
+        System.out.println("roll is = " + roll);
+        System.out.println("name is = " + name);
+        System.out.println("email is = " + email);
+        //roll = 42;
+        //name = "bhargav";
+        //email = "bh3@gmail.com";
+
+
+    }
+
+    public static void main(String arg[])
+    {
+        student s1 = new student();
+    }
+}
+
+4.Different between String Buffered reader and Scanner classes.
+
+--> in java buffered reader and scanner class are source that serve as way of reading inputs.
+--> scanner class is simple text scanner that can parse primitive types and strings.it internally use regular expression to read different types.
+-->   buffered reader reads text from character input stream, buffering character so as to provide for the efficient reading of the sequence of characters.
+
+--> Buffered Reader is synchronous while Scanner is not. Buffered Reader should be used if we are working with multiple threads.
+--> Buffered Reader has a significantly larger buffer memory than Scanner.
+--> The Scanner has a little buffer (1KB char buffer) as opposed to the Buffered Reader (8KB byte buffer), but it’s more than enough.
+--> Buffered Reader is a bit faster as compared to Scanner because the Scanner does the parsing of input data and Buffered Reader simply reads a sequence of characters.
+
+ 
+
+
+5.Write a program to print the names of students by creating a Student class. If no name is passed while creating an object of Student class, then the name should be "Unknown", otherwise the name should be equal to the String value passed while creating object of Student class.
+
+--> 
+
+import java.util.Scanner;
+
+class student 
+{
+    String name,unknown;
+
+    public student(String unknown)
+    {
+        name = unknown;
+
+    }
+
+    public student()
+    {
+        name = "unknown";
+    }
+
+    public static void main(String arg[])
+    {
+        student s = new student();
+       // s.name = "";
+
+        if(s.name == null)
+        {
+            System.out.println("name is " + s.unknown);
+        }
+
+        else
+        {
+        System.out.println("name is = " + s.name);
+        }
+    }
+}
