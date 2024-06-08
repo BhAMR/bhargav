@@ -260,3 +260,90 @@ public class Member
         mn.manager();
     }
 }
+
+// write a program to count the number of objects created by the users 
+
+
+public class user
+{
+	private static int objCount=0;
+
+	user()
+	{
+		objCount++;
+	}
+
+	public static int getobj()
+	{
+		return objCount;
+	}
+
+	public static void main(String arg[])
+	{
+		user us1 = new user();
+		user us2 = new user();
+
+		System.out.println("total object are = " + user.getobj());
+	}
+} 
+
+
+
+// write a java program to add check deposite_limit & check withdraw_limit  (in bacnkactivite program) maintain minimum balance after withdrawing if balance is not sufficient than send suitable msg.
+ 
+public class user
+{
+    private Double balance,depositeLimit,withdrawLimit,minimumBalance;
+
+    public user(double initialBalance,double depositeLimit,double withdrawLimit,double minimumBalance)
+    {
+        this.balance = initialBalance;
+        this.depositeLimit = depositeLimit;
+        this.withdrawLimit = withdrawLimit;
+        this.minimumBalance = minimumBalance;
+    }
+
+    public void deposite(double amount) // method to deposite
+    {
+        if(amount > depositeLimit)
+        {
+            System.out.println("deposite failed due to exceeds balance limit of " + depositeLimit);
+        }
+
+        else
+        {
+            balance = balance + amount;
+            System.out.println("deposite successfull " + amount + "deposited.. curent balance : " + balance);
+        }
+    }
+
+    public void withdraw(double amount)
+    {
+        if(amount > withdrawLimit)
+        {
+            System.out.println("withdrawal failed due to exceeds limit. minimum balance :" + minimumBalance + " must be maintained");
+
+        }
+        else{
+            balance = balance-amount;
+            System.out.println("amount withdrawal sucess : " + amount + ".current balance :" + balance);
+        }
+    }
+
+    public double getBalance()
+    {
+        return balance;
+    }
+
+    public static void main(String[] args)
+     {
+        user ba = new user(1000.0, 5000.0, 2000.0, 500.0);
+        ba.deposite(3000);
+        ba.deposite(6000);
+
+        ba.withdraw(1500);
+        ba.withdraw(3000);
+        
+    }
+}
+
